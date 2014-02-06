@@ -19,7 +19,7 @@ namespace XMLDirectory
 
             if (args.Length == 1)
             {
-                outputFile = args[1];
+                outputFile = args[0];
             }
 
 
@@ -51,14 +51,26 @@ namespace XMLDirectory
                     {
                         artist = artisttrack[1];
                         track = artisttrack[2];
-                        track = track.Replace("_", " ");
-                        track = track.Replace(artist, "");
-                        track = track.Replace(extension, "");
-                        track= track.Trim();
+
                         if (track.Contains(ignore))
                         {
                             continue;
                         }
+
+                        track = track.Replace("_", " ");
+                        track = track.Replace(artist, "");
+                        track = track.Replace(extension, "");
+                        track = track.Trim();
+
+                        artist = artist.Replace("&&", "&amp;");
+                        artist = artist.Replace("\"", "&quot;");
+                        artist = artist.Replace("<", "&lt;");
+                        artist = artist.Replace(">", "&gt;");
+
+                        track = track.Replace("&", "&amp;");
+                        track = track.Replace("\"", "&quot;");
+                        track = track.Replace("<", "&lt;");
+                        track = track.Replace(">", "&gt;");
 
                         dnList.Add(new KeyValuePair<String, String>(artist, track));
                         Console.WriteLine("{0}", f.File);
