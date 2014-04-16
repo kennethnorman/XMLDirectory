@@ -84,7 +84,7 @@ namespace XMLDirectory
                             File = file,
                         };
 
-            List<KeyValuePair<String, String>> dnList = new List<KeyValuePair<String, String>>();
+            List<KeyValuePair<String, String[]>> dnList = new List<KeyValuePair<String, String[]>>();
             foreach (var f in files)
             {
                 String artist, track;
@@ -99,6 +99,8 @@ namespace XMLDirectory
                     {
                         continue;
                     }
+
+                    string filename = track;
 
                     track = track.Replace("_", " ");
                     track = track.Replace(artist, "");
@@ -115,7 +117,13 @@ namespace XMLDirectory
                     track = track.Replace("<", "&lt;");
                     track = track.Replace(">", "&gt;");
 
-                    dnList.Add(new KeyValuePair<String, String>(artist, track));
+                    filename = filename.Replace("&", "&amp;");
+
+                    string[] fileData = new string[2];
+                    fileData[0]= track;
+                    fileData[1]= filename;
+
+                    dnList.Add(new KeyValuePair<String, String[]>(artist, fileData));
                     Console.WriteLine("{0}", f.File);
                 }
             }
@@ -126,7 +134,8 @@ namespace XMLDirectory
                 StringBuilder sb = new StringBuilder();
                 sb.Append("    <Song>\r\n");
                 sb.Append("        <Artist>" + song.Key + "</Artist>\r\n");
-                sb.Append("        <Track>" + song.Value + "</Track>\r\n");
+                sb.Append("        <Track>" + song.Value[0] + "</Track>\r\n");
+                sb.Append("        <Filename>" + song.Value[1] + "</Filename>\r\n");
                 sb.Append("    </Song>\r\n");
                 OutputFile.Write(sb);
             }
