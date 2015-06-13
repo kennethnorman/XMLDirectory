@@ -12,6 +12,7 @@ namespace XMLDirectory
     {
         const String extension = ".pdf";
         const String pattern = "*" + extension;
+        const Char ObsMarker = '+';
         List<KeyValuePair<String, String[]>> dnList = new List<KeyValuePair<String, String[]>>();
 
         public SongList(string OutputFileName, bool UseObsfucatedPdfSuffix) : 
@@ -79,9 +80,9 @@ namespace XMLDirectory
 
         private static string TidyUpTrackName(String artist, String track)
         {
-            if (track.Contains('#'))
+            if (track.Contains(ObsMarker))
             {
-                track = track.Substring(0, track.IndexOf('#'));
+                track = track.Substring(0, track.IndexOf(ObsMarker));
             }
             track = track.Replace("_", " ");
             track = track.Replace(artist, "");
@@ -140,14 +141,14 @@ namespace XMLDirectory
             Random rnd = new Random(Environment.TickCount);
             foreach (var f in files)
             {
-                if (f.File.Contains('#'))
+                if (f.File.Contains(ObsMarker))
                 {
                     continue;
                 }
 
                 int value = rnd.Next(10000000, 99999999);
                 string nameOnly = f.File.Replace(extension, "");
-                string obsFileName = nameOnly + "#" + value;
+                string obsFileName = nameOnly + ObsMarker + value;
                 File.Move(f.File, obsFileName + extension);
             }
         }
@@ -162,12 +163,12 @@ namespace XMLDirectory
 
             foreach (var f in files)
             {
-                if (f.File.Contains('#'))
+                if (f.File.Contains(ObsMarker))
                 {
                     string nameOnly = f.File.Replace(extension, "");
-                    if (nameOnly.Contains('#'))
+                    if (nameOnly.Contains(ObsMarker))
                     {
-                        nameOnly = nameOnly.Substring(0, nameOnly.IndexOf('#'));
+                        nameOnly = nameOnly.Substring(0, nameOnly.IndexOf(ObsMarker));
                     }
                     File.Move(f.File, nameOnly + extension);
                 }
