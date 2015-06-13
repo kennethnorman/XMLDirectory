@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SongInfo>
+    <Song>
+        <Artist>10CC</Artist>
+        <Track>I'm Mandy Fly Me</Track>
+        <Info>
+            <Band>Brotherhood's Roundabout</Band>
+            <Band>The Airwaves</Band>
+            <Band>Tiger Club</Band>
+        </Info>
+    </Song>
+    <Song>
+        <Artist>10CC</Artist>
+        <Track>I'm not in love</Track>
+        <Info>
+            <Band></Band>
+        </Info>
+    </Song>
+    <Song>
+        <Artist>Abba</Artist>
+        <Track>Mamma Mia</Track>
+        <Info>
+            <Band></Band>
+        </Info>
+    </Song>
+    <Song>
+        <Artist>ACT</Artist>
+        <Track>The Effect</Track>
+        <Info>
+            <Band>Brotherhood's Roundabout</Band>
+        </Info>
+    </Song>
+    <Song>
+        <Artist>ACT</Artist>
+        <Track>Useless Argument</Track>
+        <Info>
+            <Band>Brotherhood's Roundabout</Band>
+        </Info>
+    </Song>
+    <Song>
+        <Artist>ACT</Artist>
+        <Track>Wailings from a building</Track>
+        <Info>
+            <Band>Brotherhood's Roundabout</Band>
+        </Info>
+    </Song>
+</SongInfo>

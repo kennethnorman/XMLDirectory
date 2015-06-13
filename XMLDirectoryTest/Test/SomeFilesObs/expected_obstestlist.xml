@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SongList>
+    <Song>
+        <Artist>10CC</Artist>
+        <Track>I'm Mandy Fly Me</Track>
+        <Filename>10CC_I'm_Mandy_Fly_Me+89634991.pdf</Filename>
+    </Song>
+    <Song>
+        <Artist>10CC</Artist>
+        <Track>I'm not in love</Track>
+        <Filename>10CC_I'm_not_in_love+70569929.pdf</Filename>
+    </Song>
+    <Song>
+        <Artist>Abba</Artist>
+        <Track>Mamma Mia</Track>
+        <Filename>Abba_Mamma_Mia+79368136.pdf</Filename>
+    </Song>
+    <Song>
+        <Artist>ACT</Artist>
+        <Track>The Effect</Track>
+        <Filename>ACT_The_Effect+80423673.pdf</Filename>
+    </Song>
+    <Song>
+        <Artist>ACT</Artist>
+        <Track>Useless Argument</Track>
+        <Filename>ACT_Useless_Argument+92161595.pdf</Filename>
+    </Song>
+    <Song>
+        <Artist>ACT</Artist>
+        <Track>Wailings from a building</Track>
+        <Filename>ACT_Wailings_from_a_building+40409687.pdf</Filename>
+    </Song>
+</SongList>

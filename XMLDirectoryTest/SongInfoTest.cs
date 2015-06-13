@@ -9,10 +9,14 @@ namespace XMLDirectoryTest
     public class SongInfoTest
     {
         const string DefaultTestFileName = "testinfo.xml";
+        const string TestSrc = "..\\..\\Test\\";
+        const string BackTo = "..\\..\\Bin\\Release";
+
+
         [TestMethod]
         public void InfoNoFiles()
         {
-            Directory.SetCurrentDirectory("NoFiles");
+            Directory.SetCurrentDirectory(TestSrc + "NoFiles");
             SongInfo si = new SongInfo(DefaultTestFileName);
             si.Close();
 
@@ -21,13 +25,13 @@ namespace XMLDirectoryTest
 
             CommonTest.CompareResult(ExpectedResult, ActualResult);
 
-            Directory.SetCurrentDirectory("..");
+            Directory.SetCurrentDirectory(BackTo);
         }
 
         [TestMethod]
         public void InfoSomeFiles()
         {
-            Directory.SetCurrentDirectory("SomeFiles");
+            Directory.SetCurrentDirectory(TestSrc + "SomeFiles");
             SongInfo sl = new SongInfo(DefaultTestFileName);
             sl.Close();
 
@@ -36,13 +40,13 @@ namespace XMLDirectoryTest
 
             CommonTest.CompareResult(ExpectedResult, ActualResult);
 
-            Directory.SetCurrentDirectory("..");
+            Directory.SetCurrentDirectory(BackTo);
         }
 
         [TestMethod]
         public void InfoObsSomeFiles()
         {
-            Directory.SetCurrentDirectory("SomeFilesObs");
+            Directory.SetCurrentDirectory(TestSrc + "SomeFilesObs");
             SongInfo sl = new SongInfo(DefaultTestFileName);
             sl.Close();
 
@@ -51,7 +55,7 @@ namespace XMLDirectoryTest
 
             CommonTest.CompareResult(ExpectedResult, ActualResult);
 
-            Directory.SetCurrentDirectory("..");
+            Directory.SetCurrentDirectory(BackTo);
         }
     }
 }

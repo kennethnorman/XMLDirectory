@@ -8,11 +8,14 @@ namespace XMLDirectoryTest
     [TestClass]
     public class SongListTest
     {
+        const string TestSrc = "..\\..\\Test\\";
+        const string BackTo = "..\\..\\Bin\\Release";
+        
         const string DefaultTestFileName = "testlist.xml";
         [TestMethod]
         public void ListNoFiles()
         {
-            Directory.SetCurrentDirectory("NoFiles");
+            Directory.SetCurrentDirectory(TestSrc + "NoFiles");
             SongList sl = new SongList(DefaultTestFileName, false);
             sl.Close();
 
@@ -21,13 +24,13 @@ namespace XMLDirectoryTest
 
             CommonTest.CompareResult(ExpectedResult, ActualResult);
 
-            Directory.SetCurrentDirectory("..");
+            Directory.SetCurrentDirectory(BackTo);
         }
 
         [TestMethod]
         public void ListSomeFiles()
         {
-            Directory.SetCurrentDirectory("SomeFiles");
+            Directory.SetCurrentDirectory(TestSrc + "SomeFiles");
             SongList sl = new SongList(DefaultTestFileName, false);
             sl.Close();
 
@@ -36,13 +39,13 @@ namespace XMLDirectoryTest
 
             CommonTest.CompareResult(ExpectedResult, ActualResult);
 
-            Directory.SetCurrentDirectory("..");
+            Directory.SetCurrentDirectory(BackTo);
         }
 
         [TestMethod]
         public void ListObsNoFiles()
         {
-            Directory.SetCurrentDirectory("NoFiles");
+            Directory.SetCurrentDirectory(TestSrc + "NoFiles");
             SongList sl = new SongList("obs" + DefaultTestFileName, true);
             sl.Close();
 
@@ -51,13 +54,13 @@ namespace XMLDirectoryTest
 
             CommonTest.CompareResult(ExpectedResult, ActualResult);
 
-            Directory.SetCurrentDirectory("..");
+            Directory.SetCurrentDirectory(BackTo);
         }
 
         [TestMethod]
         public void ListObsSomeFiles()
         {
-            Directory.SetCurrentDirectory("SomeFilesObs");
+            Directory.SetCurrentDirectory(TestSrc + "SomeFilesObs");
             SongList sl = new SongList("obs" + DefaultTestFileName, true);
             sl.Close();
 
@@ -66,7 +69,7 @@ namespace XMLDirectoryTest
 
             CommonTest.CompareResult(ExpectedResult, ActualResult);
 
-            Directory.SetCurrentDirectory("..");
+            Directory.SetCurrentDirectory(BackTo);
         }
 
     }
