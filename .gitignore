@@ -1,13 +1,14 @@
 #################
-## Eclipse
+## MSVS
 #################
 
 *.pydevproject
 .project
 .metadata
-bin/
 tmp/
 *.tmp
+*.exe
+*.pdb
 *.bak
 *.swp
 *~.nib
